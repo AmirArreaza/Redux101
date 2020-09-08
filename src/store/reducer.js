@@ -30,6 +30,16 @@ const reducer = (state = intialState, action) => {
         //push will mutate the object not advisable to use
         results: state.results.concat({ id: new Date(), value: state.counter }),
       };
+    case "DELETE_RESULT":
+      //const newArray =[...state.results];
+      //newArray.splice(id, 1);      
+
+      //Copy of the array
+      const updatedArray = state.results.filter(result => result.id !== action.resultId);
+      return{
+        ...state,
+        results: updatedArray
+      }
   }
 
   return state;
