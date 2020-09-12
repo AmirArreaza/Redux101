@@ -1,4 +1,4 @@
-import * as actionTypes from '../actions';
+import * as actionTypes from "../actions";
 
 const intialState = {
   results: [],
@@ -13,16 +13,18 @@ const reducer = (state = intialState, action) => {
       };
     case actionTypes.DELETE_RESULT:
       //const newArray =[...state.results];
-      //newArray.splice(id, 1);      
+      //newArray.splice(id, 1);
 
       //Copy of the array
-      const updatedArray = state.results.filter(result => result.id !== action.resultId);
-      return{
+      const updatedArray = state.results.filter(
+        (result) => result.id !== action.resultId
+      );
+      return {
         ...state,
-        results: updatedArray
-      }
+        results: updatedArray,
+      };
+    default:
+      return state;
   }
-
-  return state;
 };
 export default reducer;
