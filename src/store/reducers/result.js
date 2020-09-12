@@ -4,6 +4,13 @@ import { updateObject } from "../utility";
 const intialState = {
   results: [],
 };
+const deleteResult = (state, action) => {
+  const updatedArray = state.results.filter(
+    (result) => result.id !== action.resultId
+  );
+  return updatedArray;
+};
+
 const reducer = (state = intialState, action) => {
   switch (action.type) {
     case actionTypes.STORE_RESULT:
@@ -13,14 +20,8 @@ const reducer = (state = intialState, action) => {
     case actionTypes.DELETE_RESULT:
       //const newArray =[...state.results];
       //newArray.splice(id, 1);
-
       //Copy of the array
-      const updatedArray = state.results.filter(
-        (result) => result.id !== action.resultId
-      );
-      return updateObject(state, {
-        results: updatedArray,
-      });
+      return updateObject(state, { results: deleteResult(state, action) });
     default:
       return state;
   }
