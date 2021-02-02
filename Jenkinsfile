@@ -4,7 +4,7 @@ pipeline {
         PROJECT_NAME = "Redux - 101"
     }
 
-    agent none
+    agent { dockerfile true }
 
     stages {
         stage('output') {
