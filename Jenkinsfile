@@ -13,10 +13,8 @@ pipeline {
             }
         }
         stage('Build - Docker image') {
-            agent { dockerfile true }
             steps {
-                echo "Creating docker image"
-                sh 'printenv'
+                docker 'build -t redux-101 .'
             }
         }
     }
