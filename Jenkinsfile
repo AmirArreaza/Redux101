@@ -10,7 +10,7 @@ pipeline {
         stage('Starting CI process'){
             steps {
                 echo "${PROJECT_NAME}"
-                bat "set"
+                bat 'set'
             }
         }
         stage('Build - Docker image') {
