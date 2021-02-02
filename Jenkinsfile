@@ -15,7 +15,7 @@ pipeline {
         stage('Build - Docker image') {
             steps {
                 echo "Building..."
-                docker "build -t redux-101 ."
+                nodeBuildImage()
             }
         }
     }
@@ -24,5 +24,5 @@ pipeline {
 }
 
 def nodeBuildImage(){
-    docker.build()
+    docker.build("redux-101")
 }
