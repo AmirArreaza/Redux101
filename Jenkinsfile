@@ -14,7 +14,7 @@ pipeline {
         }
         stage('Build - Docker image') {
             steps {
-                docker build -t redux-101 .
+                def customImage = docker.build()
             }
         }
     }
