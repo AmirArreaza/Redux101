@@ -10,4 +10,4 @@ COPY . .
 
 RUN npm run build
 
-RUN ls
+RUN echo ls
