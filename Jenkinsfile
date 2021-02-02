@@ -2,8 +2,6 @@ pipeline {
 
     environment {
         PROJECT_NAME = "Redux - 101"
-        registry = "docker_hub_account/repository_name"
-        registryCredential = 'dockerhub'
     }
 
     agent none
@@ -17,6 +15,9 @@ pipeline {
         }
         stage('Build - Docker image') {
             agent { dockerfile true }
+            steps {
+                set "Creating docker image"
+            }
         }
     }
 }
