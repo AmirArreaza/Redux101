@@ -14,6 +14,7 @@ pipeline {
         }
         stage('Build - Docker image') {
             steps {
+                echo "Building..."
                 nodeBuildImage()
             }
         }
