@@ -10,13 +10,13 @@ pipeline {
         stage('Starting CI process'){
             steps {
                 echo "${PROJECT_NAME}"
-                bat 'set'
             }
         }
         stage('Build - Docker image') {
             agent { dockerfile true }
             steps {
-                set "Creating docker image"
+                echo "Creating docker image"
+                sh 'printenv'
             }
         }
     }
