@@ -1,12 +1,10 @@
 pipeline {
 
-    enviroment{
+    environment{
         PROJECT_NAME = "Redux - 101"
     }
 
-    agent {
-        docker { image 'node:14-alpine' }
-    }
+    agent { dockerfile true }
 
     stages {
         stage('output') {
