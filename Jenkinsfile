@@ -11,7 +11,6 @@ pipeline {
     stages {
         stage('Starting CI process'){
             steps {
-                sh 'ls'
                 sh "echo ${env.PROJECT_NAME}"
             }
         }
