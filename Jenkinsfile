@@ -4,6 +4,8 @@ pipeline {
         PROJECT_NAME = "Redux - 101"
     }
 
+    agent none
+
     stages {
         stage('output') {
             steps {
