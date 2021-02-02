@@ -9,8 +9,8 @@ pipeline {
     agent none
 
     stages {
-        agent { dockerfile true }
-        stage('output') {
+        stage('Build Docker image') {
+            agent { dockerfile true }
             steps {
                 sh "echo ${env.PROJECT_NAME}"
             }
