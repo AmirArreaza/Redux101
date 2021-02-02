@@ -11,7 +11,8 @@ pipeline {
     stages {
         stage('Starting CI process'){
             steps {
-                sh "echo ${env.PROJECT_NAME}"
+                echo "${PROJECT_NAME}"
+                sh 'printenv'
             }
         }
         stage('Build Docker image') {
