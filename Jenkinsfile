@@ -14,8 +14,14 @@ pipeline {
         }
         stage('Build - Docker image') {
             steps {
-                docker.build()
+                nodeBuildImage()
             }
         }
     }
+
+
+}
+
+def nodeBuildImage(){
+    docker.build()
 }
