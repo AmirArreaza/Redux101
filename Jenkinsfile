@@ -1,6 +1,6 @@
 pipeline {
 
-    environment{
+    environment {
         PROJECT_NAME = "Redux - 101"
     }
 
@@ -12,9 +12,10 @@ pipeline {
                 sh "echo ${env.PROJECT_NAME}"
             }
         }
-        stage('node version')
-            steps{
+        stage('node version'){
+            steps {
                 sh 'node --version'
             }
+        }
     }
 }
