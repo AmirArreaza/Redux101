@@ -12,14 +12,11 @@ pipeline {
         stage('Starting CI process'){
             steps {
                 echo "${PROJECT_NAME}"
-                sh 'printenv'
+                bat "set"
             }
         }
-        stage('Build Docker image') {
+        stage('Build - Docker image') {
             agent { dockerfile true }
-            steps {
-                sh "echo ${env.PROJECT_NAME}"
-            }
         }
     }
 }
