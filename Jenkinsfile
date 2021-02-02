@@ -5,10 +5,8 @@ pipeline {
         registry = "docker_hub_account/repository_name"
         registryCredential = 'dockerhub'
     }
-
-    agent { dockerfile true }
-
     stages {
+        agent { dockerfile true }
         stage('output') {
             steps {
                 sh "echo ${env.PROJECT_NAME}"
